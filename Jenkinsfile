@@ -7,5 +7,14 @@ pipeline {
       }
     }
 
+    stage('Build2') {
+      steps {
+        script {
+          def customImage = docker.build("${registry}:${env.BUILD_ID}")
+        }
+
+      }
+    }
+
   }
 }
